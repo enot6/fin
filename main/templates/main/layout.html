@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %} {% endblock %}
+    {% block stl %} {% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <aside>
+        {% block bgImg %}
+        {% endblock %}
+        <div>
+            <a href="{% url 'about' %}" class="blubtn">Какая-то кнопка</a>
+            <a href="{% url 'about' %}" class="blubtn">еще кнопка</a>
+            <a href="{% url 'about' %}" class="blubtn">просто кнопка</a>
+        </div>
+    </aside>
+    
+    <main>
+        <div class="planets">
+            <p>Выберите планету:</p>
+            <a href="{% url 'mercury' %}"><img width="50vw" hspace="20" src="{% static 'main/img/mercury.png' %}" alt="меркурий"></a>
+            <a href="{% url 'venus' %}"><img width="80vw" hspace="20" src="{% static 'main/img/venus.png' %}" alt="венера"></a>
+            <a href="{% url 'earth' %}"><img width="100vw" hspace="20" src="{% static 'main/img/earth.png' %}" alt="земля"></a>
+            <a href="{% url 'mars' %}"><img width="70vw" hspace="20" src="{% static 'main/img/mars.png' %}" alt="МаРс"></a>
+            <a href="{% url 'jupiter' %}"><img width="170vw" hspace="20" src="{% static 'main/img/jupiter.png' %}" alt="юпитер"></a>
+            <a href="{% url 'saturn' %}"><img width="160vw" hspace="20" src="{% static 'main/img/saturn.png' %}" alt="сатурн"></a>
+            <a href="{% url 'about' %}"><img width="90vw" hspace="20" src="{% static 'main/img/uranus.png' %}" alt="уран"></a>
+            <a href="{% url 'about' %}"><img width="85vw" hspace="20" src="{% static 'main/img/neptune.png' %}" alt="нептун"></a>
+
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
